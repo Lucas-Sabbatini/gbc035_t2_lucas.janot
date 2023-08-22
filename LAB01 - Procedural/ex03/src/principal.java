@@ -202,6 +202,37 @@ public class principal {
 
         System.out.printf("A media é %f e o desvio padrão é %f",media,desv);
     }
+
+    public static void ex09(){
+        Scanner sc = new Scanner(System.in);
+        int i,nAlunos;
+        float soma=0,media;
+
+        do{
+            System.out.println("<< Media de n alunos. Máximo de 100 alunos >>\nEntre com o número de alunos: ");
+            nAlunos = sc.nextInt();
+            if(nAlunos > 100){
+                System.out.println("Você digitou um valor maior do que 100, tente novamente");
+            }
+        }while(nAlunos >100);
+
+        float[] vet = new float[nAlunos];
+
+        for(i=0;i<nAlunos;i++){
+            System.out.printf("Digite a nota do aluno %d: ",i+1);
+            vet[i] = sc.nextInt();
+            soma+=vet[i];
+        }
+
+        media = soma/nAlunos;
+
+        System.out.println("\n<< Relatório de notas >>");
+        for(i=0;i<nAlunos;i++){
+            System.out.printf("A nota do aluno %d é: %f\n",i+1,vet[i]);
+        }
+        System.out.println("A media das notas da turma é: "+media);
+
+    }
     public static void main(String[] args) {
         // ex01();
         // ex02();
@@ -211,6 +242,7 @@ public class principal {
         // ex06();
         // ex07();
         //ex08();
+        ex09();
     }
 
 
