@@ -12,13 +12,13 @@ int main()
   scanf("%s", nome);
   scanf("%f", &preco_ant);
   scanf("%d", &qtd);
-
+  
  
   produto *p;
 
   p = cria_produto(nome,preco_ant,qtd);
 
-  altera_preco(p, 10);
+  altera_preco(p, 10); 
 
   get_prod_info(p,nome, &preco_at, &qtd);
 
