@@ -233,6 +233,31 @@ public class principal {
         System.out.println("A media das notas da turma é: "+media);
 
     }
+
+    public static void ex10(){
+        int i;
+        int[] A = new int[3];
+        int[] B = new int[3];
+        int[] C = new int[3];
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Subtração de vetores");
+        for(i=0;i<3;i++){
+            System.out.printf("Digite o valor %d de A: ",i+1);
+            A[i] = sc.nextInt();
+        }
+
+        for(i=0;i<3;i++){
+            System.out.printf("Digite o valor %d de B: ",i+1);
+            B[i] = sc.nextInt();
+        }
+
+        System.out.println("O vetor C,definido como C = A-B é:");
+        for(i=0;i<3;i++){
+            C[i] = A[i] - B[i];
+            System.out.printf(" %d",C[i]);
+        }
+    }
     public static void main(String[] args) {
         // ex01();
         // ex02();
@@ -242,7 +267,7 @@ public class principal {
         // ex06();
         // ex07();
         //ex08();
-        ex09();
+        ex10();
     }
 
 
