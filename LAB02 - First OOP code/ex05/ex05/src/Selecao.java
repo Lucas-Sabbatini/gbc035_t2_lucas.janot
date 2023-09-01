@@ -1,14 +1,20 @@
 import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) {
+public class Selecao {
+    public Figurinha[] jogadoresTitulares;
+    String tecnico;
+    String nomeDaSelecao;
+
+    public Selecao(String tecnico,String nomeDaSelecao){
+        this.tecnico = tecnico;
+        this.nomeDaSelecao = nomeDaSelecao;
+        jogadoresTitulares = new Figurinha[11];
         int i,dia,mes,ano;
-        String nome,posicao,pais;
         float altura,peso;
         Scanner sc = new Scanner(System.in);
-        Figurinha[] album = new Figurinha[3];
+        String nome,posicao,pais;
 
-        for(i=0;i<3;i++){
+        for(i=0;i<11;i++){
             System.out.println("Digite o nome do jogador: ");
             nome = sc.nextLine();
             System.out.println("Digite a sua altura: ");
@@ -27,11 +33,17 @@ public class Main {
             ano = sc.nextInt();
             clearBuffer(sc);
 
-            album[i] = new Figurinha(nome,altura,peso,posicao,pais,dia,mes,ano);
+            jogadoresTitulares[i] = new Figurinha(nome,altura,peso,posicao,pais,dia,mes,ano);
         }
 
-        for(i=0;i<3;i++){
-            album[i].imprimeFigurinha();
+        System.out.println("Digite o nome do Técnico");
+    }
+
+    public void mostrarSelecao(){
+        int i;
+        System.out.printf("%s, seleção do técnico %s: \n",nomeDaSelecao,tecnico);
+        for(i=0;i<11;i++){
+            jogadoresTitulares[i].imprimeFigurinha();
         }
     }
 
@@ -41,3 +53,5 @@ public class Main {
         }
     }
 }
+
+
